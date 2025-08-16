@@ -20,8 +20,9 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('Build Angular App') {
             steps {
+                echo 'Building Angular project...'
                 bat 'npm run build'
             }
         }
