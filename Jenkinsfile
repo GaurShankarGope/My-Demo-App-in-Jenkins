@@ -31,7 +31,7 @@ stage('Deploy to IIS') {
         echo 'Deploying Angular build to IIS...'
         bat 'rmdir /s /q C:\\inetpub\\wwwroot\\My_Demo_App\\'
         bat 'mkdir C:\\inetpub\\wwwroot\\My_Demo_App\\'
-        bat 'xcopy /E /I /Y dist\\* C:\\inetpub\\wwwroot\\My_Demo_App\\'
+        bat 'xcopy /E /I /Y dist\\My_Demo_App\\browser\\* C:\\inetpub\\wwwroot\\My_Demo_App\\'
     }
 }
 
