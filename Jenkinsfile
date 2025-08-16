@@ -2,6 +2,12 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                echo 'Cleaning workspace...'
+                deleteDir()
+            }
+        }
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/GaurShankarGope/My-Demo-App-in-Jenkins.git'
@@ -14,6 +20,11 @@ pipeline {
             }
         }
 
+        stage('Build') {
+            steps {
+                bat 'npm run build'
+            }
+        }
         stage('Build') {
             steps {
                 bat 'npm run build'
