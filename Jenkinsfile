@@ -28,12 +28,13 @@ pipeline {
         }
 stage('Deploy to IIS') {
     steps {
-        echo 'Deploying build...'
-        bat """
-        xcopy "${WORKSPACE}\\dist\\My_Demo_App" "C:\\inetpub\\wwwroot\\My_Demo_App" /E /I /Y
-        """
+        echo 'Deploying Angular build to IIS...'
+        bat 'rmdir /s /q C:\\inetpub\\wwwroot\\My_Demo_App\\'
+        bat 'mkdir C:\\inetpub\\wwwroot\\My_Demo_App\\'
+        bat 'xcopy /s /y /i dist\\My_Demo_App\\browser\\* C:\\inetpub\\wwwroot\\My_Demo_App\\'
     }
 }
+
 
     }
     post {
