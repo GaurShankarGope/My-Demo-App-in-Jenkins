@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('My_Demo_App');
   count = signal(0)
+  clickIncrement() {
+    this.count.update(value => value + 1);
+  }
 }
