@@ -26,6 +26,15 @@ pipeline {
                 bat 'npm run build'
             }
         }
+stage('Deploy to IIS') {
+    steps {
+        echo 'Deploying build...'
+        bat """
+        xcopy "${WORKSPACE}\\dist\\My_Demo_App" "C:\\inetpub\\wwwroot\\My_Demo_App" /E /I /Y
+        """
+    }
+}
+
     }
     post {
         success {
