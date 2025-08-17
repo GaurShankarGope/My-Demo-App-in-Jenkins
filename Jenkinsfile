@@ -41,6 +41,7 @@ pipeline {
         success {
             script {
                 emailext(
+                    from: 'gauri6684@gmail.com', // <-- add your sender email here
                     to: 'gauri6684@gmail.com',
                     subject: "SUCCESS: Jenkins Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: "Good news! The build succeeded.\n\nCheck details: ${env.BUILD_URL}"
@@ -50,6 +51,7 @@ pipeline {
         failure {
             script {
                 emailext(
+                    from: 'gauri6684@gmail.com', // <-- add your sender email here
                     to: 'gauri6684@gmail.com',
                     subject: "FAILURE: Jenkins Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                     body: "Oops! The build failed.\n\nCheck details: ${env.BUILD_URL}"
