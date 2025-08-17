@@ -9,5 +9,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('My_Demo_App');
-  name = signal('This is a demo application for CI-CD Pipeline');
+  name = signal('This is a demo application for email notifications');
 }
