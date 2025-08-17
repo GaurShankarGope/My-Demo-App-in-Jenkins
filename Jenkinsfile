@@ -42,7 +42,7 @@ stage('Deploy to IIS') {
             echo 'Pipeline completed successfully!'
         script {
             emailext(
-                to: 'gauri6684@gmail.com'
+                to: 'gauri6684@gmail.com',
                 subject: "SUCCESS: Jenkins Build ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Good news! The build succeeded.\n\nCheck details: ${env.BUILD_URL}"
             )
